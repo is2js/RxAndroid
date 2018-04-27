@@ -80,12 +80,12 @@ public class MainActivity extends RxAppCompatActivity{
 
 
 
-        // Rxlifecycle 사용
+        // Rxlifecycle 사용없이 로그찍기
         Observable.interval(0, 1, TimeUnit.SECONDS)
                 .map( String::valueOf)
                 .subscribe( s -> Log.i("###", s));
 
-
+        // Rxlifecycle 사용하여 앱이 백버튼으로 화면뒤로 갔을 때, 스트림 종료시키기
         Observable.interval(0, 1, TimeUnit.SECONDS)
                 .map( String::valueOf)
                 .compose(bindToLifecycle())
