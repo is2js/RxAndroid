@@ -44,8 +44,8 @@ public class MainActivity extends RxAppCompatActivity{
 
             @Override
             public void onNext(String s) {
-                ((TextView) findViewById(R.id.txt)).setText(s);
-                Log.i("###", "로그찍자");
+                ((TextView) findViewById(R.id.txt2)).setText(s);
+                Log.i("###", "옵져버가 텍스트받아서 setText찍음");
 
 
             }
@@ -62,17 +62,25 @@ public class MainActivity extends RxAppCompatActivity{
         };
 
 
+        //Rxbinding을 통해  버튼 변수없이 id만 참조하여 -> 바로 텍스트뷰에 뿌려줄수 있다.
         clicks(findViewById(R.id.btn))
                 .subscribe(
-                        e -> ((TextView) findViewById(R.id.txt)).setText("RxView.clicks를 옵져버블없이 subscribe시켜 setText해버리기")
+                        e -> ((TextView) findViewById(R.id.txt)).setText("버튼클릭을 옵져버블없이 ->subcribe-> setText ")
                 );
 
-        mObservable = clicks(findViewById(R.id.btn2))
-                .map(e -> "RxView.clicks를 옵져버블에 담아놓고 .map()으로  e->텍스트로 전환.\n"+" 차후 옵져버가 받을 때, setText함. ");
 
+
+        //Rxbinding을 통해  클릭이벤트->map->String 으로 옵져버블에 대입
+        mObservable = clicks(findViewById(R.id.btn2))
+                .map(e -> " 클릭시마다 옵져버블 -> 옵저버를 통해 전해주기 ");
+
+        //옵져버가 옵져버블을 구독 -> 클릭시마다 데이터를 전해줄 것임
         mObservable
                 .subscribe(mObserver);
 
+
+
+        // Rxlifecycle 사용
         Observable.interval(0, 1, TimeUnit.SECONDS)
                 .map( String::valueOf)
                 .subscribe( s -> Log.i("###", s));
