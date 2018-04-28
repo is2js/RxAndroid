@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteY="81dp">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="216dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/btn_words"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_lambda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="lambda"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btn_map"
+        app:layout_constraintEnd_toStartOf="@+id/btn_map"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="map"
+        app:layout_constraintEnd_toStartOf="@+id/btn_flatmap"
+        app:layout_constraintStart_toEndOf="@+id/btn_lambda"
+        app:layout_constraintTop_toBottomOf="@+id/btn_words" />
+
+    <Button
+        android:id="@+id/btn_flatmap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="flatmap"
+        app:layout_constraintEnd_toStartOf="@+id/btn_zip"
+        app:layout_constraintStart_toEndOf="@+id/btn_map"
+        app:layout_constraintTop_toTopOf="@+id/btn_map" />
+
+    <Button
+        android:id="@+id/btn_zip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="zip"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btn_flatmap"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_flatmap" />
+
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="341dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="6dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btn_map"
+        app:layout_constraintStart_toEndOf="@+id/btn_map"
+        app:layout_constraintTop_toBottomOf="@+id/btn_lambda" />
+
+    <Button
+        android:id="@+id/btn_gugudan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="59dp"
+        android:text="구구단(8)"
+        app:layout_constraintEnd_toStartOf="@+id/btn_zip"
+        app:layout_constraintStart_toStartOf="@+id/btn_zip"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_words"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="워드쪼개기"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btn_gugudan"
+        app:layout_constraintEnd_toEndOf="@+id/btn_map"
+        app:layout_constraintStart_toEndOf="@+id/btn_map" />
+</android.support.constraint.ConstraintLayout>
