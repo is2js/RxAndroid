@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteY="81dp">
+
+
+
+
+        <TextView
+            android:id="@+id/txt_dataset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="15dp"
+            android:text="Data Set : 1,2,3,1,4,5,3,6,7"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_result"
+        android:layout_width="322dp"
+        android:layout_height="141dp"
+
+        android:layout_marginBottom="13dp"
+        android:text="result"
+        android:textColor="@android:color/background_dark"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btn_first"
+        app:layout_constraintStart_toEndOf="@+id/btn_first"
+        app:layout_constraintTop_toBottomOf="@+id/btn_take"
+        app:layout_constraintVertical_bias="0.88" />
+
+        <Button
+            android:id="@+id/btn_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="Filter"
+            app:layout_constraintStart_toStartOf="@+id/btn_distinct"
+            app:layout_constraintTop_toBottomOf="@+id/btn_distinct" />
+
+        <Button
+            android:id="@+id/btn_foreach"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="foreach"
+            app:layout_constraintStart_toStartOf="@+id/btn_filter"
+            app:layout_constraintTop_toBottomOf="@+id/btn_filter" />
+
+    <Button
+        android:id="@+id/btn_take"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="take(3)"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btn_first"
+        app:layout_constraintStart_toStartOf="@+id/btn_groupby2" />
+
+    <Button
+        android:id="@+id/btn_first"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="first(3)"
+        app:layout_constraintStart_toEndOf="@+id/btn_take"
+        app:layout_constraintTop_toBottomOf="@+id/btn_groupby2" />
+
+    <Button
+        android:id="@+id/btn_last"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="last(2)"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btn_first"
+        app:layout_constraintStart_toEndOf="@+id/btn_first" />
+
+        <Button
+            android:id="@+id/btn_distinct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="distinct"
+            app:layout_constraintStart_toStartOf="@+id/txt_dataset"
+            app:layout_constraintTop_toBottomOf="@+id/txt_dataset" />
+
+        <Button
+            android:id="@+id/btn_groupby"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="groupby"
+            app:layout_constraintStart_toStartOf="@+id/btn_foreach"
+            app:layout_constraintTop_toBottomOf="@+id/btn_foreach" />
+
+        <Button
+            android:id="@+id/btn_groupby2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Groupby2"
+            app:layout_constraintStart_toStartOf="@+id/btn_groupby"
+            app:layout_constraintTop_toBottomOf="@+id/btn_groupby" />
+
+</android.support.constraint.ConstraintLayout>
