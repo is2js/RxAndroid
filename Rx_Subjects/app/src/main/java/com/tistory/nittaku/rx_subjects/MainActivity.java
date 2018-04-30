@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.jakewharton.rxbinding2.view.RxView;
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
@@ -21,13 +22,25 @@ public class MainActivity extends RxAppCompatActivity {
         setContentView(R.layout.activity_main);
 
         RxView.clicks(findViewById(R.id.btn_publish))
-                .subscribe( e-> doPublish());
+                .subscribe( e-> {
+                    doPublish();
+                    Toast.makeText(this, "PublishSubject", Toast.LENGTH_SHORT).show();
+                });
         RxView.clicks(findViewById(R.id.btn_behavior))
-                .subscribe( e-> doBehavior());
+                .subscribe( e-> {
+                    doBehavior();
+                    Toast.makeText(this, "BehaviorSubject", Toast.LENGTH_SHORT).show();
+                });
         RxView.clicks(findViewById(R.id.btn_replay))
-                .subscribe( e-> doReplay());
+                .subscribe( e-> {
+                    doReplay();
+                    Toast.makeText(this, "ReplaySubject", Toast.LENGTH_SHORT).show();
+                });
         RxView.clicks(findViewById(R.id.btn_async))
-                .subscribe( e-> doAsync());
+                .subscribe( e-> {
+                    doAsync();
+                    Toast.makeText(this, "AsyncSubject", Toast.LENGTH_SHORT).show();
+                    });
     }
 
     private void doPublish() {
