@@ -23,8 +23,8 @@ public class MainActivity extends RxAppCompatActivity {
 
         RxView.clicks(findViewById(R.id.btn_publish))
                 .subscribe( e-> {
-                    doPublish();
-                    Toast.makeText(this, "PublishSubject", Toast.LENGTH_SHORT).show();
+                    doPublish();                                                                     //함수 실행
+                    Toast.makeText(this, "PublishSubject", Toast.LENGTH_SHORT).show(); //해당 토스트 띄우기
                 });
         RxView.clicks(findViewById(R.id.btn_behavior))
                 .subscribe( e-> {
