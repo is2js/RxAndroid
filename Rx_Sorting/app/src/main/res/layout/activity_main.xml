@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="72dp"
+        android:layout_marginTop="8dp"
+        android:text="Dataset = 6, 1, 3, 5, 7, 0, -3 "
+        app:layout_constraintBottom_toTopOf="@+id/btn_sort"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="7dp"
+        android:text='Dataset = "o", "T", "가나다", "a", "b", "c", "z", "h", "Q", "R", "토요일"'
+        app:layout_constraintBottom_toTopOf="@+id/txt_result2"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_sort3" />
+
+    <TextView
+        android:id="@+id/txt_result2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="1dp"
+        android:text="result"
+        app:layout_constraintBottom_toTopOf="@+id/btn_sort4"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/txt_result"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="8dp"
+        android:text="result"
+        app:layout_constraintHorizontal_bias="0.467"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <Button
+        android:id="@+id/btn_sort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:text="tosortedList"
+        app:layout_constraintBottom_toTopOf="@+id/btn_sort2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <Button
+        android:id="@+id/btn_sort2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="compareTo"
+        app:layout_constraintBottom_toTopOf="@+id/btn_sort3"
+        app:layout_constraintStart_toStartOf="@+id/btn_sort"
+        app:layout_constraintTop_toBottomOf="@+id/btn_sort" />
+
+    <Button
+        android:id="@+id/btn_sort3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="7dp"
+        android:text="-compareto"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintStart_toStartOf="@+id/btn_sort2"
+        app:layout_constraintTop_toBottomOf="@+id/btn_sort2" />
+
+    <Button
+        android:id="@+id/btn_sort5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="compareTo"
+        app:layout_constraintBottom_toTopOf="@+id/btn_sort6"
+        app:layout_constraintStart_toStartOf="@+id/btn_sort4"
+        app:layout_constraintTop_toBottomOf="@+id/btn_sort4" />
+
+    <Button
+        android:id="@+id/btn_sort6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="18dp"
+        android:text="-compareto"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/btn_sort5"
+        app:layout_constraintTop_toBottomOf="@+id/btn_sort5" />
+
+    <Button
+        android:id="@+id/btn_sort4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:text="tosortedList"
+        app:layout_constraintBottom_toTopOf="@+id/btn_sort5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_result2" />
+
+    <Button
+        android:id="@+id/btn_map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="87dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:text="map"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btn_multimap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="multimap"
+        app:layout_constraintStart_toStartOf="@+id/btn_map"
+        app:layout_constraintTop_toBottomOf="@+id/btn_map" />
+
+</android.support.constraint.ConstraintLayout>
