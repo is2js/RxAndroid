@@ -26,7 +26,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class MainActivity extends RxAppCompatActivity {
 //    http://bis.naju.go.kr:8080/json/arriveAppInfo?BUSSTOP_ID=1439
     static final String BASE_URL = "http://bis.naju.go.kr:8080/";
-    String bus;
 
     EditText busnumber;
     TextView result;
@@ -45,7 +44,7 @@ public class MainActivity extends RxAppCompatActivity {
     }
 
     public void getBus(){
-        String busstop_Id = busnumber.getText().toString();  //숫자여도, string에 담아야함. 주소에 붙기 때문에
+        int busstop_Id =  Integer.parseInt( busnumber.getText().toString() );  // 인터페이스에서 요청상수를 int형 설정 -> editText의 inputType을 number -> int변수에 담아줌
 
         // 1. Retrofit 클라이언트 생성
         Retrofit client = new Retrofit.Builder()

@@ -9,5 +9,5 @@ http://bis.naju.go.kr:8080/json/arriveAppInfo?BUSSTOP_ID=1439
 public interface Retrofit2 {
 
     @GET("json/arriveAppInfo")
-    Observable<Bus> getData(@Query("BUSSTOP_ID") String busstop_id);
+    Observable<Bus> getData(@Query("BUSSTOP_ID") int busstop_id);
 }

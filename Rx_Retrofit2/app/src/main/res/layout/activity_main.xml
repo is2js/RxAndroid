@@ -24,6 +24,7 @@
             android:id="@+id/txt_bus"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="number"
             android:hint="정류장번호 입력" />
     </android.support.design.widget.TextInputLayout>
 
