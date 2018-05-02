@@ -10,17 +10,20 @@ import android.widget.Toast;
 
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import com.jakewharton.rxbinding2.view.RxView;
+import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
+import io.reactivex.subjects.BehaviorSubject;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends RxAppCompatActivity {
 //    http://bis.naju.go.kr:8080/json/arriveAppInfo?BUSSTOP_ID=1439
     static final String BASE_URL = "http://bis.naju.go.kr:8080/";
     String bus;
@@ -61,8 +64,13 @@ public class MainActivity extends AppCompatActivity {
         // 가. 데이터를 가져오는 대상 Observable : newTHread 로 새로운 Thread 에서 작업한다.
         // 나. 화면에 새팅하는 Observer : main Thread에서 작업한다.
         Observable<Bus> BusData = service.getData( busstop_Id );
-        BusData.subscribeOn(Schedulers.newThread())
+
+
+
+        BusData
+                .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
+                .compose(bindToLifecycle())
                 .subscribe(
                         data -> {
                             String temp = "";
@@ -75,9 +83,11 @@ public class MainActivity extends AppCompatActivity {
                         ,()->{Toast.makeText(this, "정상적으로 버스정보를 가져왔습니다.", Toast.LENGTH_SHORT).show(); }
                 );
 
-
-        BusData.subscribeOn(Schedulers.newThread())
+        Observable.interval(0,5, TimeUnit.SECONDS)
+                .flatMap(n-> BusData) //5초마다 갱신해주는 인터벌을 넣고 리턴은 숫자니까 -> 미리 만들어준 BusData 옵져버블로 형변환
+                .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
+                .compose(bindToLifecycle())
                 .subscribe( item->
                         {
                             if (item.getRESULT().getRESULTCODE().equals("SUCCESS")) {
